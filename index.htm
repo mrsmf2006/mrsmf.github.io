@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohammad Fakhri — Public Notebook</title>
+    
+    <!-- Modern Geometric Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- Design System Variables (Warm White, Timeless, Technical) --- */
+        :root {
+            --bg-main: #FAFAFA;       /* 80% of the site: Warm White */
+            --bg-surface: #FFFFFF;    /* Pure White for clean separation */
+            --text-primary: #111111;  /* Almost Black */
+            --text-secondary: #4B5563;/* Gray 600 */
+            --border-color: #E5E7EB;  /* Light Gray for strict structures */
+            --accent-blue: #0066CC;   /* Premium Technical Blue */
+            --accent-emerald: #059669;/* Subtle Alternative Accent */
+            --radius: 16px;           /* Exact geometric rounding */
+            --font-main: 'Geist', -apple-system, BlinkMacSystemFont, sans-serif;
+            --max-width: 760px;       /* Highly readable editorial line-length */
+        }
+
+        /* --- Base Reset & Global Styles --- */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            background-color: var(--bg-main);
+            color: var(--text-primary);
+            font-family: var(--font-main);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            padding: 0 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* --- Layout Structure --- */
+        header, main, footer {
+            width: 100%;
+            max-width: var(--max-width);
+        }
+
+        /* --- Header Section --- */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 48px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .logo {
+            font-size: 15px;
+            font-weight: 500;
+            letter-spacing: -0.01em;
+        }
+
+        nav {
+            display: flex;
+            gap: 24px;
+        }
+
+        nav a {
+            font-size: 14px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.1s ease;
+        }
+
+        nav a:hover {
+            color: var(--text-primary);
+        }
+
+        /* --- Generous Spacing for Sections --- */
+        section {
+            padding: 96px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        /* --- Hero Section (The Core Intent) --- */
+        .hero h1 {
+            font-size: 38px;
+            font-weight: 400;
+            line-height: 1.25;
+            letter-spacing: -0.03em;
+            color: var(--text-primary);
+            margin-bottom: 24px;
+        }
+
+        .hero .intro-text {
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin-bottom: 36px;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 16px;
+        }
+
+        .btn {
+            font-size: 14px;
+            font-weight: 500;
+            padding: 10px 18px;
+            border-radius: calc(var(--radius) - 4px);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .btn-primary {
+            background-color: var(--text-primary);
+            color: var(--bg-surface);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-secondary);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            color: var(--text-primary);
+            border-color: var(--text-secondary);
+        }
+
+        /* --- About Section (3-Column Layout) --- */
+        .about h2 {
+            font-size: 14px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-secondary);
+            margin-bottom: 48px;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+
+        .about-col h3 {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text-primary);
+            margin-bottom: 20px;
+        }
+
+        .about-col ul {
+            list-style: none;
+        }
+
+        .about-col li {
+            font-size: 15px;
+            color: var(--text-secondary);
+            margin-bottom: 12px;
+            line-height: 1.5;
+        }
+
+        /* --- Responsive Adjustments --- */
+        @media (max-width: 640px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 24px;
+                padding: 32px 0;
+            }
+            nav {
+                flex-wrap: wrap;
+                gap: 16px;
+            }
+            .hero h1 {
+                font-size: 28px;
+            }
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+            section {
+                padding: 64px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">Mohammad Fakhri</div>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#work">Work</a>
+            <a href="#projects">Projects</a>
+            <a href="#writing">Writing</a>
+            <a href="#now">Now</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="hero">
+            <h1 id="hero-title"><!-- Injected by JS --></h1>
+            <p class="intro-text" id="hero-intro"><!-- Injected by JS --></p>
+            <div class="hero-actions">
+                <a href="#writing" class="btn btn-primary">Read writings</a>
+                <a href="#projects" class="btn btn-secondary">See projects</a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about" id="about">
+            <h2>Things I'm Building</h2>
+            <div class="about-grid" id="about-content">
+                <!-- 3 Columns Injected by JS -->
+            </div>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
